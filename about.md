@@ -5,7 +5,7 @@ permalink: /about/
 ---
 <div class="pull-left" style="float: left; margin: 10px;">
 	<p>
-		<image src="{{ site.url }}/images/me.jpeg" alt="Xavier Lucas"/>
+		<image src="/images/me.jpeg" alt="Xavier Lucas"/>
 	</p>
 </div>
 
