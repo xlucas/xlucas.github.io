@@ -19,9 +19,10 @@ layout: default
     {{ content }}
   </div>
 
+  {% include share.html %}
   {% if site.disqus.shortname %}
     <p class="post-meta" align="center">
-		React to this post by sharing a comment below!
+		React to this post by writing a comment below!
 	</p>
     {% include disqus_comments.html %}
   {% endif %}
