@@ -22,6 +22,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.systemdump.org"
 twitter_username: systemdump
 github_username:  xlucas
+linkedin_profile: xavier-lucas-01aaa0b2
+linkedin_fullname: Xavier Lucas
 disqus:
   shortname: systemdump
 # Build settings
