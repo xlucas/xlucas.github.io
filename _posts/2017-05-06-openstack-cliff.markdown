@@ -347,5 +347,5 @@ Did you mean one of these?
 [openstack-foundation]: https://www.openstack.org/foundation
 [openstack-components]: https://www.openstack.org/software/project-navigator
 [github-confluence-cli]: https://github.com/xlucas/confluence-python-cli
-[github-openstack-client]: https://github.com/openstack?utf8=%E2%9C%93&q=client
-[github-openstack-clients]: https://github.com/openstack/python-openstackclient
+[github-openstack-client]: https://github.com/openstack/python-openstackclient
+[github-openstack-clients]: https://github.com/openstack?utf8=%E2%9C%93&q=client
