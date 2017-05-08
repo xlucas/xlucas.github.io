@@ -5,8 +5,11 @@
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>
+			{% if site.author %}
+          	<li>
+			&copy; {{ site.author | escape }} {{ site.time | date: '%Y' }}
             </li>
+			{% endif %}
             {% if site.email %}
             <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
             {% endif %}
