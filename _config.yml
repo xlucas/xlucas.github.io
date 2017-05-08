@@ -14,16 +14,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Systemdump
-author: ""
+author: "Xavier Lucas"
 description: > # this means to ignore newlines until "baseurl:"
   Technical insights, considerations and stories of the IT sphere told from the
   inside.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.systemdump.org"
-twitter_username: systemdump
-github_username:  xlucas
-linkedin_profile: xavier-lucas-01aaa0b2
-linkedin_fullname: Xavier Lucas
+twitter:
+  username: systemdump
+github:
+  username: xlucas
+linkedin:
+  profile: xavier-lucas-01aaa0b2
+  username: Xavier Lucas
 disqus:
   shortname: systemdump
 # Build settings
@@ -36,6 +39,7 @@ kramdown:
 theme: minima
 gems:
   - jekyll-feed
+  - jekyll-seo-tag
 exclude:
   - Gemfile
   - Gemfile.lock
