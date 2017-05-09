@@ -33,7 +33,8 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/logo_512.png
+      image: /images/logo_512.png?v=2
+      icon: /images/favicon.ico?v=2
 # Build settings
 markdown: kramdown
 kramdown:
