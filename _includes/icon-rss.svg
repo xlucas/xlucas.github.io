@@ -1,0 +1,5 @@
+<svg viewbox="0 0 100 100" width="14px" height="14px" fill="#fffff">
+    <circle class="rss-piece fill" cx="12" cy="75.5" r="12" fill="#828282" />
+    <path class="rss-piece" fill="#828282" d="M58 87.5H41c0-22.644-18.356-41-41-41l0 0v-17C32.033 29.5 58 55.5 58 87.5z" />
+    <path class="rss-piece" fill="#828282" d="M70 87.5c0-38.66-31.34-70-70-70V0c48.324 0 87.5 39.2 87.5 87.5H70z" />
+</svg>

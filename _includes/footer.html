@@ -18,6 +18,9 @@
 
       <div class="footer-col footer-col-2">
         <ul class="social-media-list">
+          <li>
+          {% include icon-rss.html %}
+          </li>
           {% if site.github.username %}
           <li>
             {% include icon-github.html username=site.github.username %}
@@ -35,6 +38,7 @@
             {% include icon-linkedin.html profile=site.linkedin.profile username=site.linkedin.username %}
           </li>
           {% endif %}
+
         </ul>
       </div>
 
