@@ -10,20 +10,19 @@ $base-line-height: 1.5 !default;
 
 $post-title-font-family: "nyt-cheltenham",georgia,"times new roman",times,serif;
 $post-title-font-style: italic;
-$post-header-margin: 50px;
+$post-header-margin:    50px;
 $post-body-font-family: georgia,"times new roman",times,serif;
-$post-body-font-size: 17px;
-$post-body-color: rgb(51, 51, 51);
+$post-body-font-size:   17px;
+$post-body-color:       #333333;
 
 $spacing-unit:     30px !default;
-
 $text-color:       #111 !default;
 $background-color: #fdfdfd !default;
 $brand-color:      #2a7ae2 !default;
-
 $grey-color:       #828282 !default;
 $grey-color-light: lighten($grey-color, 40%) !default;
 $grey-color-dark:  darken($grey-color, 25%) !default;
+$link-color:       lighten($brand-color, 40%) !default;
 
 // Width of the content area
 $content-width:    800px !default;

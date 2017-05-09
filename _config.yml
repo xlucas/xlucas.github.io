@@ -29,6 +29,11 @@ linkedin:
   username: Xavier Lucas
 disqus:
   shortname: systemdump
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/logo_512.png
 # Build settings
 markdown: kramdown
 kramdown:
