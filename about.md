@@ -9,7 +9,7 @@ permalink: /about/
 	</p>
 </div>
 
-My name is Xavier Lucas. I'm a 29 year old French IT engineer who started its
+My name is Xavier Lucas. I'm a 30 year old French IT engineer who started its
 journey back in 2010.
 
 I've been working some years in dev and ops consecutively before joining
