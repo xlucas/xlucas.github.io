@@ -340,6 +340,7 @@
     &:active {
       color: #666666;
       background-color: #666666;
+      border: none;
 
       {% for item in site.nav_menu %}
 	&.nav__item--{{ item.name | downcase }} { background-image: url("{{ item.icon }}_white"); }
@@ -653,6 +654,16 @@
 }
 
 .post__body {
+  a, a:active, a:visited {
+	color: #22953c;
+	border: none;
+	background-color: transparent;
+
+	&:hover {
+	  border-bottom: 1px solid #ddd;
+	}
+  }
+
   > p:last-of-type {
     &:after { // tombstone
       content: ' \2756';
