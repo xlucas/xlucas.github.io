@@ -725,6 +725,18 @@
 	font-weight: 200;
 }
 
+.image-container-shadow {
+  text-align: center;
+
+  img {
+	box-shadow: 2px 2px 10px #666666;
+  }
+}
+
+.image-container {
+  text-align: center;
+}
+
 
 
 /* # 7) Trumps

@@ -1,21 +1,21 @@
 ---
-title: SSL on github pages with a custom domain for free
-teaser: Use the OVH SSL Gateway to serve your github pages over SSL for free
+title: Free github-pages CNAME over SSL
+teaser: OVH SSL Gateway serves your github pages on a custom domain over SSL for free.
 image: /images/logo.png
 comments: true
 category: guides
 tags: [github, ovh]
 ---
 
-## The limitation
-Github pages are a great way to quickly host your personal blog, repository
-homepage and any other static content. Combined with [Jekyll][jekyll] you have
-enough to host a free, beautiful, highly-configurable website. Github reserves
-a subdomain of `github.io` for each user. But what if you want to use a domain
-name you own instead? Well, github supports [custom
-domains][github-custom-domain]. However, if you try to reach your domain in
-https you will find out that the certificate is invalid and the connection is
-insecure! That's because *github don't support SSL on custom domains*.
+> #### The limitation
+> Github pages are a great way to quickly host your personal blog, repository
+> homepage and any other static content. Combined with [Jekyll][jekyll] you have
+> enough to host a free, beautiful, highly-configurable website. Github reserves
+> a subdomain of `github.io` for each user. But what if you want to use a domain
+> name you own instead? Well, github supports [custom
+> domains][github-custom-domain]. However, if you try to reach your domain over
+> https you will find out that the certificate is invalid and the connection is
+> insecure! That's because *github don't support SSL on custom domains*.
 
 ## OVH SSL Gateway
 Since a few months, [OVH][ovh-com] proposes amongst its offers a reverse proxy
@@ -28,10 +28,8 @@ features is smaller than what the US company offers. There's a free plan that
 should be more than sufficient for your custom domain on github pages to
 support SSL.
 
-<div align="center">
-	<p>
-		<image src="/images/ssl-gateway.png" alt="OVH SSL Gateway"/>
-	</p>
+<div class="image-container-shadow">
+  <img src="/images/ssl-gateway.png" alt="OVH SSL Gateway"/>
 </div>
 
 ## Set a CNAME on github
@@ -72,19 +70,17 @@ found, your gateway will be properly configured and show up in the ['Sunrise'
 section][sunrise-ssl-gateway] of the customer interface.
 
 
-## Redirect HTTP to HTTPS
+## Redirect the traffic
+There's one last thing you need to do, serve *all traffic* in a secure way. For
+this to be achieved, go to the configuration page of the gateway, select its
+settings and check the following option:
 
-Unfortunately, the free plan doesn't include HTTP redirections.  When not
-hosting critical content you can still write a bit of javascript to redirect
-visitors to the secure version of your site. For example:
-```javascript
-var host = "{{ "{{ site.url" }} }}".replace(/http(s)?:\/\//g, "");
-if ((host == window.location.host) && (window.location.protocol != "https:")) {
-	window.location.protocol = "https";
-}
-```
+<div class="image-container-shadow">
+  <img src="/images/ssl-gateway-options.png" alt="OVH SSL Gateway Options"/>
+</div>
 
-That's all you have to do.
+
+Validate to update the gateway's configuration, and you're all set!
 
 
 [cloudflare]: https://www.cloudflare.com

@@ -1,6 +1,6 @@
 ---
-title: Automatic outgoing voice calls with Twilio
-teaser: Use Twilio API to programmatically send voice calls with text-to-speech.
+title: Programmable voice calls
+teaser: Twilio API allows to trigger on-demand voice calls supporting text-to-speech.
 image: /images/logo.png
 comments: true
 category: guides
@@ -37,10 +37,8 @@ number. To trigger actions during the call, Twilio needs to know what to do.
 When you trigger a voice call you have to give it a URL. During the call a
 request will be sent to this URL, expecting as a result a XML formatted
 response honoring Twilio's scheme called [TwiML][twilio-twiml].
-<div align="center">
-	<p>
-		<image src="/images/twilio-call.png" alt="Twilio call"/>
-	</p>
+<div class="image-container">
+  <image src="/images/twilio-call.png" alt="Twilio call"/>
 </div>
 
 
@@ -49,23 +47,19 @@ The free tier gives you access to one voice call & fax capable phone number.
 You can order additional phone numbers with different capabilities for an
 affordable extra fee. This phone number will be used as the origin for outgoing
 phone calls.
-<div align="center">
-	<p>
-		<image src="/images/twilio-phone-number.png" alt="Twilio phone number"/>
-	</p>
-</div>
-
 
 ## Creating a TwiML bin
 Hopefully, for a basic usage you don't need to host your own web server anymore
-to host the call controller, you can use [TwiML Bin][twilio-bin] instead. For
-non trivial usage you may need to stick with hosting your own API and passing
-it to outgoing phone calls.
-<div align="center">
-	<p>
-		<image src="/images/twilio-bin.png" alt="Twilio TwiML bin"/>
-	</p>
-</div>
+to host the call controller, you can use [TwiML Bin][twilio-bin] instead with
+the following TwiML. Non trivial usage requires hosting your own API and so
+Twilio can consume it during phone calls.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Hello world!</Say>
+</Response>
+```
 
 ## Automate phone calls
 Now we only need to trigger voice calls with the SDK.
@@ -115,10 +109,8 @@ python main.py \
 ```
 
 Here you go:
-<div align="center">
-	<p>
-		<image src="/images/twilio-result.png" alt="Twilio result"/>
-	</p>
+<div class="image-container-shadow">
+  <image src="/images/twilio-result.png" alt="Twilio result"/>
 </div>
 
 Pick up the call and you will hear a text to speech record greeting you with a

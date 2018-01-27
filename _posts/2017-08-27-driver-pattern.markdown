@@ -1,6 +1,6 @@
 ---
-title: A driver pattern in go
-teaser: Create, register, load drivers and never mind about their implementation.
+title: A driver pattern
+teaser: Create, register and load drivers to embrace modular programming.
 image: /images/logo.png
 comments: true
 category: programming
