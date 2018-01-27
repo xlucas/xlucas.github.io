@@ -86,13 +86,13 @@
 
 .nameplate__avatar {
   border-radius: 50%;
-  background-color: #fff;
+  background-color: transparent;
   @include bgicon($image: url("{{ site.baseurl }}{{ site.avatar }}"), $size: 100%);
 
   @include mobile-only {
     float: left;
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3rem;
+    height: 3rem;
     margin-left: 1rem;
     margin-right: 0.8rem;
   }
@@ -105,6 +105,9 @@
 
   @include mobile-only {
     font-size: 2.5rem;
+	color: #666666;
+	font-weight: 700;
+    text-transform: lowercase;
   }
 
   @include tablet-portrait-up {
@@ -376,6 +379,10 @@
     top: -1rem;
     @include edge(top, 1px, #ddd);
   }
+
+  @include mobile-only {
+    text-align: center;
+  }
 }
 
 .colophon__statement { display: block; } // max. one per line
@@ -487,6 +494,14 @@
     background-color: transparent;
   }
 
+  a {
+    border: none;
+	color: inherit;
+  }
+  a:hover {
+    color: #666666;
+  }
+
   @include mobile-only {
     font-size: 1.25rem;
     @include fontweight(bold);
@@ -499,14 +514,6 @@
     font-size: 2rem;
     font-weight: 700;
     margin-top: 5rem;
-
-	a {
-	  border: none;
-	  color: inherit;
-	}
-    a:hover {
-	  color: #666666;
-    }
   }
 }
 .posts__entry-teaser {
@@ -740,12 +747,17 @@
   text-align: center;
 
   img {
+	max-width: 100%;
 	box-shadow: 2px 2px 10px #666666;
   }
 }
 
 .image-container {
   text-align: center;
+
+  img {
+	  max-width: 100%;
+  }
 }
 
 

@@ -2,9 +2,9 @@
 # Theme Customization #
 #######################
 
-title: Systemdump
+title: systemdump
 author: Xavier Lucas
-description: My thoughts, technical insights and experimentations.
+description: My thoughts, technical insights and experimentations
 url: https://blog.systemdump.org
 repo: https://github.com/xlucas/xlucas.github.io
 
@@ -35,16 +35,10 @@ nav_menu:
 
 projects:
   - title: SVFS
-    teaser: A Virtual File System for Openstack Swift.
+    teaser: A Virtual File System for Openstack Swift
     url: https://github.com/ovh/svfs
     role: Creator
     category: Object Storage
-
-
-#######
-# SEO #
-#######
-
 
 #################
 # Site Settings #
@@ -55,8 +49,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - LICENSE
-  - README.md
-  - TODO.md
 
 permalink: /:collection/:path
 
