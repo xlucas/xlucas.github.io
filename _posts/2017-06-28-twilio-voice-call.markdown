@@ -1,10 +1,12 @@
 ---
-layout: post
-title: "Automatic outgoing voice calls with Twilio"
-date: 2017-06-28 12:00:00 +0200
+title: Automatic outgoing voice calls with Twilio
+teaser: Use Twilio API to programmatically send voice calls with text-to-speech.
+image: /images/logo.png
 comments: true
-categories: twilio python calls
+category: guides
+tags: [twilio, python]
 ---
+
 ## About Twilio
 [Twilio][twilio-com] is a cloud communications platform providing a complete
 [API][twilio-api] to manage SMS, Voice & Messaging. It has a free tier that

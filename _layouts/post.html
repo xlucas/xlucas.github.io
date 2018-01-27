@@ -1,29 +1,42 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
-        {{ page.date | date: date_format }}
-      </time>
-      {% if page.author %}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>
-      {% endif %}</p>
-  </header>
+{% capture pretty_date %}
+  {% assign day = page.date | date: "%-d"  %}
+  {{ page.date | date: "%B" }}
+  {% case day %}{% when '1' or '21' or '31' %}{{ day }}st{% when '2' or '22' %}{{ day }}nd{% when '3' or '23' %}{{ day }}rd{% else %}{{ day }}th{% endcase %}{{ page.date | date: ", %Y" }}
+{% endcapture %}
 
-  <div class="post-content" itemprop="articleBody">
+<main class="post" role="main">
+  <div class="post__head">
+    <h1 class="post__title"> {{ page.title }} </h1>
+    <time class="post__date" datetime="{{ page.date | date_to_xmlschema }}"> {{ pretty_date }} </time>
+    <div class="post__labels">
+    {% if page.category %} <a href="{{ site.baseurl }}/category/{{ page.category }}" class="post__category">{{ page.category }}</a>{% endif %}
+    {% if page.tags %}{% for tag in page.tags %} <a href="{{ site.baseurl }}/tag/{{ tag }}" class="post__tag">{{ tag }}</a>{% endfor %}{% endif %}
+    </div>
+  </div>
+  <div class="post__body">
     {{ content }}
   </div>
+</main>
 
-  {% include share.html %}
-  {% if site.disqus.shortname %}
-    <p class="post-meta" align="center">
-		React to this post by writing a comment below!
-	</p>
-    {% include disqus_comments.html %}
-  {% endif %}
-</article>
+<div class="share-links">
+	Share me on &rarr;
+	<a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter.username }}&related={{ site.twitter.username }}" rel="nofollow" target="_blank" title="Share on Twitter">Twitter</a>
+	&nbsp;|&nbsp;
+	<a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook">Facebook</a>
+	&nbsp;|&nbsp;
+	<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Google+">Google+</a>
+	&nbsp;|&nbsp;
+	<a href="http://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary=" rel="nofollow" target="_blank" title="Share on Linkedin">Linkedin</a>
+	&nbsp;|&nbsp;
+	<a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" rel="nofollow" target="_blank" title="Share on Reddit">Reddit</a>
+</div>
+
+
+{% if page.comments %}
+  <p class="share-meta" align="center">React to this post by writing a comment below!</p>
+  {% include disqus.html %}
+{% endif %}

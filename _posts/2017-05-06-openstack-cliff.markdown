@@ -1,10 +1,12 @@
 ---
-layout: post
-title: "Building a modern CLI with cliff"
-date: 2017-05-06 20:54:00 +0200
+title: Building a modern CLI with cliff
+teaser: Use a little-known openstack library to build your next CLI.
+image: /images/logo.png
 comments: true
-categories: python
+category: programming
+tags: [python, openstack]
 ---
+
 ## History
 Most pythoners probably heard about [Openstack][openstack-org], the famous
 open-source software platform for cloud computing. The Openstack ecosystem is
@@ -341,6 +343,8 @@ mycli: 'kommand' is not a mycli command. See 'mycli --help'.
 Did you mean one of these?
   command
 ```
+
+And that's it!
 
 [openstack-org]: https://www.openstack.org/
 [openstack-cliff]: https://github.com/openstack/cliff

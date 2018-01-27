@@ -1,11 +1,14 @@
 ---
-layout: post
-title: "A driver pattern in go"
-date: 2017-08-27 14:00:00 +0200
+title: A driver pattern in go
+teaser: Create, register, load drivers and never mind about their implementation.
+image: /images/logo.png
 comments: true
-categories: go pattern
+category: programming
+tags: [go]
 ---
-## Writing modular programs
+
+Writing modular programs
+------------------------
 Modular programming implies decoupling abstractions from implementations.
 Quite often, your program is built atop a particular piece of technology and
 you realize that it could be easily replaced with something else, keeping all
@@ -14,13 +17,14 @@ yourself: *"I just need a modular way to pick any of those implementations
 while writing generic code in the rest of my application"*.  In other words you
 are looking for *drivers*.
 
-## Good old drivers
+Good old drivers
+----------------
 Unlike plugins that leverage a mechanism to extend the set of features offered
 by a program, drivers focus on offering a strict environment tied to other
 pieces of code by contract. A contract is the only interaction medium with a
 driver, putting aside implementations specificities.
 
-## The layout
+### The layout
 Firsteval we need a driver registry that will reside in the `driver` package.
 We will then create a `drivers` package containing our drivers structured by
 group. Each group has a `register` package that eases the import process in the
@@ -40,7 +44,7 @@ rest of the application and sets build constraints.
 
 ```
 
-## It's all about contracts
+### It's all about contracts
 Without surprise, the way to enforce a contract is with an `interface`.  Let's
 pretend we want to write a sample application that could leverage multiple
 printing backends.
@@ -53,7 +57,7 @@ type Printer interface {
 }
 ```
 
-## The driver registry
+### The driver registry
 At some point we will basically need to retrieve the driver implementation from
 a name i.e. a string. This means that we need drivers to declare themselves to
 the registry under aliases.
@@ -113,7 +117,7 @@ func fullQualifiedName(group, name string) string {
 }
 ```
 
-## Declaring a driver group
+### Declaring a driver group
 Now let's declare our driver group refering to the `Printer` interface.
 
 ```go
@@ -132,7 +136,7 @@ type Printer interface {
 }
 ```
 
-## Writing drivers
+### Writing drivers
 We first implement a driver that writes to the console.
 ```go
 package console
@@ -194,7 +198,7 @@ func (f *File) Close() error {
 }
 ```
 
-## Drivers at compile time
+### Drivers at compile time
 We want to avoid a build process that includes irrelevant drivers for a target
 OS, doesn't allow to exclude unstable drivers for production or build minimal
 binaries. Fortunately, go already provides all necessary material to elaborate
@@ -214,11 +218,11 @@ import _ "repo/user/project/drivers/printer/console"
 Then this driver will not be built if you pass `-tags=exclude_driver_console`
 to the build chain.
 
-## Using drivers
+### Using drivers
 Using drivers is trivial, we simply import the `register` package and the
 driver group in the proper order.
 
-```go
+~~~ go
 package main
 
 import (
@@ -240,16 +244,19 @@ func main() {
 	printer.Print([]byte("Hello world!"))
 	printer.Close()
 }
-```
+~~~
 
-Result:
-```bash
+### Result
+
+~~~ bash
 $ go run main.go --driver=console
 Hello world!
 
 $ go run main.go --driver=file
 $ cat out
 Hello world!
-```
+~~~
+
+Now, go write some drivers!
 
 [go-build-constraints]: https://golang.org/pkg/go/build/#hdr-Build_Constraints

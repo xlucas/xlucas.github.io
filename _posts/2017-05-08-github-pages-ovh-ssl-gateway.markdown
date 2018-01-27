@@ -1,10 +1,12 @@
 ---
-layout: post
-title: "SSL on github pages with a custom domain for free"
-date: 2017-05-08 16:34:00 +0200
+title: SSL on github pages with a custom domain for free
+teaser: Use the OVH SSL Gateway to serve your github pages over SSL for free
+image: /images/logo.png
 comments: true
-categories: github ovh
+category: guides
+tags: [github, ovh]
 ---
+
 ## The limitation
 Github pages are a great way to quickly host your personal blog, repository
 homepage and any other static content. Combined with [Jekyll][jekyll] you have
@@ -81,6 +83,8 @@ if ((host == window.location.host) && (window.location.protocol != "https:")) {
 	window.location.protocol = "https";
 }
 ```
+
+That's all you have to do.
 
 
 [cloudflare]: https://www.cloudflare.com

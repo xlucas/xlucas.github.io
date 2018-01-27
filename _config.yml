@@ -1,51 +1,84 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#######################
+# Theme Customization #
+#######################
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
 title: Systemdump
-author: "Xavier Lucas"
-description: > # this means to ignore newlines until "baseurl:"
-  Technical insights, considerations and stories of the IT sphere told from the
-  inside.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://blog.systemdump.org"
-twitter:
-  username: systemdump
-github:
-  username: xlucas
-linkedin:
-  profile: xavier-lucas-01aaa0b2
-  username: Xavier Lucas
+author: Xavier Lucas
+description: My thoughts, technical insights and experimentations.
+url: https://blog.systemdump.org
+repo: https://github.com/xlucas.github.io
+
+baseurl: ''
+banner: /images/banner.svg
+avatar: /images/logo.png
+
 disqus:
   shortname: systemdump
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /images/logo_512.png?v=2
-      icon: /images/favicon.ico?v=2
-# Build settings
-markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
-  auto_ids: true
-  syntax_highlighter: rouge
-theme: minima
-gems:
-  - jekyll-feed
-  - jekyll-seo-tag
+twitter:
+  username: systemdump
+
+nav_menu:
+  - name: Posts
+    url: /
+    icon: /images/icons.svg#posts
+  - name: Projects
+    url: /projects
+    icon: /images/icons.svg#portfolio
+  - name: GitHub
+    url: https://github.com/xlucas
+    icon: /images/icons.svg#github
+    outbound: true
+  - name: Twitter
+    url: https://twitter.com/systemdump
+    icon: /images/icons.svg#twitter
+    outbound: true
+
+projects:
+  - title: SVFS
+    teaser: A Virtual File System for Openstack Swift.
+    url: https://github.com/ovh/svfs
+    role: Creator
+    category: Object Storage
+
+
+#######
+# SEO #
+#######
+
+
+#################
+# Site Settings #
+#################
+
+incremental: true
 exclude:
   - Gemfile
   - Gemfile.lock
+  - LICENSE
+  - README.md
+  - TODO.md
+
+permalink: /:collection/:path
+
+collections:
+  category: { output: true }
+  tag:      { output: true }
+
+defaults:
+  - scope:  { type:   posts    }
+    values: { layout: post     }
+  - scope:  { type:   tag      }
+    values: { layout: listing  }
+  - scope:  { type:   category }
+    values: { layout: listing  }
+
+sass:
+  sass_dir: _assets/css
+
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+paginate: 10

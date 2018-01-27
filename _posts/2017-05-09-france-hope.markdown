@@ -1,9 +1,9 @@
 ---
-layout: post
-title: "How France has chosen hope"
-date: 2017-05-08 02:00:00 +0200
-comments: true
-categories: politics
+title: How France has chosen hope
+teaser: How the French presidential election unfolded.
+image: /images/logo.png
+category: politics
+tags: [france]
 ---
 Sunday, France firmly refused to give itself to the ongoing rise of extremisms.
 
