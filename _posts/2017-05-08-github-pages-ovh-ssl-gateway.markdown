@@ -7,15 +7,19 @@ category: guides
 tags: [github, ovh]
 ---
 
-> #### The limitation
-> Github pages are a great way to quickly host your personal blog, repository
-> homepage and any other static content. Combined with [Jekyll][jekyll] you have
-> enough to host a free, beautiful, highly-configurable website. Github reserves
-> a subdomain of `github.io` for each user. But what if you want to use a domain
-> name you own instead? Well, github supports [custom
-> domains][github-custom-domain]. However, if you try to reach your domain over
-> https you will find out that the certificate is invalid and the connection is
-> insecure! That's because *github don't support SSL on custom domains*.
+> #### Update
+> Since **May 01 2018**, Github supports serving custom domain over HTTPS, read
+> Github [announcement][github announcement] for this feature.
+
+## The limitation
+Github pages are a great way to quickly host your personal blog, repository
+homepage and any other static content. Combined with [Jekyll][jekyll] you have
+enough to host a free, beautiful, highly-configurable website. Github reserves
+a subdomain of `github.io` for each user. But what if you want to use a domain
+name you own instead? Well, github supports [custom
+domains][github-custom-domain]. However, if you try to reach your domain over
+https you will find out that the certificate is invalid and the connection is
+insecure! That's because *github don't support SSL on custom domains*.
 
 ## OVH SSL Gateway
 Since a few months, [OVH][ovh-com] proposes amongst its offers a reverse proxy
@@ -88,6 +92,7 @@ Validate to update the gateway's configuration, and you're all set!
 [github-custom-domain]: https://help.github.com/articles/using-a-custom-domain-with-github-pages/
 [github-ips]: https://help.github.com/articles/setting-up-an-apex-domain/#configuring-a-records-with-your-dns-provider
 [jekyll]: https://jekyllrb.com/
+[github announcement]: https://blog.github.com/2018-05-01-github-pages-custom-domains-https/
 [ovh-com]: https://www.ovh.com
 [ovh-ssl-gateway-uk]: https://www.ovh.co.uk/ssl-gateway/
 [sunrise-ssl-gateway]: https://www.ovh.com/manager/sunrise/sslGateway/index.html
