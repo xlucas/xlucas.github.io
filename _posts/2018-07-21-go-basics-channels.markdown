@@ -1,5 +1,5 @@
 ---
-title: Go channels
+title: "Go basics - channels"
 teaser: Properties, internals and particularities of Go channels.
 image: /images/logo.png
 comments: true
@@ -206,4 +206,4 @@ Received from b: 0
 
 <br/>
 <br/>
-I hope Go channels have no more secrets for you after this reading!
+I hope Go channels have no more secrets for you!
