@@ -38,7 +38,7 @@ projects:
     teaser: A Virtual File System for Openstack Swift
     url: https://github.com/ovh/svfs
     role: Creator
-    category: Object Storage
+    category: object storage
 
 #################
 # Site Settings #
