@@ -14,11 +14,13 @@ body {
 
 h1 { @include heading(2); }
 
-h2 { @include heading(1.6); @include edge($color: #ddd, $distance: 0.5rem); }
+h2 { @include heading(1.6); @include edge($color: #ddd, $distance: 0.5rem); margin-top: 3rem; }
 
 h3 { @include heading(1.4); }
 
 h4 { @include heading(1.2); }
+
+h5 { margin-top: 4rem; }
 
 hr { display: none; }
 

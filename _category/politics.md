@@ -1,3 +1,3 @@
 ---
-title: 🗁 Politics
+title: 📁 Politics
 ---

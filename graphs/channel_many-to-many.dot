@@ -1,0 +1,12 @@
+digraph many_to_many {
+  rankdir=LR
+  bgcolor=transparent
+
+  edge [fontcolor=black fontname="sans-serif" fontsize=10]
+  node [fillcolor="#ffffcc" fontcolor=black fontname="sans-serif" fontsize=10 style=filled]
+
+  channel [fillcolor=cyan shape=rect label="chan T"]
+
+  sender -> channel [label="0..*"]
+  channel -> receiver [dir=back label="0..*"]
+}
