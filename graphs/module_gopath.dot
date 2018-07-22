@@ -1,0 +1,19 @@
+digraph module_structure {
+  rankdir=LR
+  bgcolor=transparent
+
+  edge [dir=none fontcolor=black fontname="sans-serif" fontsize=10]
+  node [fillcolor="#f2e0ff" fontcolor=black fontname="sans-serif" fontsize=10 shape=record style=filled]
+
+  root [fillcolor="#e7c6ff" label="<f1> cache | <f2> github.com/me/lib@1.0.0"]
+  cache [label="<f1>download/github.com/me/lib/@v | <f2>vcs/\<hash\>"]
+  lib [label="<f1> go.mod | lib.go | README.md"]
+  download [label="<f1> list | v1.0.0.info | v1.0.0.mod | v1.0.0.zip | v1.0.0.ziphash"]
+  vcs [label="<f1> \<hash\> [.git] | <f2> \<hash\>.info"]
+
+  root:f1 -> cache:f1
+  root:f1 -> cache:f2
+  root:f2 -> lib:f1
+  cache:f1 -> download:f1
+  cache:f2 -> vcs:f1
+}

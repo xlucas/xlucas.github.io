@@ -1,0 +1,16 @@
+digraph module_structure {
+  rankdir=LR
+  bgcolor=transparent
+
+  edge [dir=none fontcolor=black fontname="sans-serif" fontsize=10]
+  node [fillcolor="#ffffcc" fontcolor=black fontname="sans-serif" fontsize=10 shape=record style=filled]
+
+  module_A [label="<f1> module_A | go.mod | <f3> dir_B | <f4> dir_C"]
+  module_B [label="<f1> module_B | go.mod | <f3> dir_D"]
+  module_C [label="<f1> module_C | go.mod"]
+  module_D [label="<f1> module_D | go.mod"]
+
+  module_A:f3 -> module_B:f1
+  module_A:f4 -> module_C:f1
+  module_B:f3 -> module_D:f1
+}
