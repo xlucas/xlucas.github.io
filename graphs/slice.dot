@@ -1,0 +1,12 @@
+digraph slice {
+    rankdir = LR
+    bgcolor = transparent
+
+    edge [fontcolor=black fontname="sans-serif" fontsize=10]
+    node [fillcolor="#ffffcc" fontcolor=black fontname="sans-serif" fontsize=10 shape="record" style=filled]
+
+    slice [fillcolor="cyan" label="<f1> ptr | len | cap"]
+    array [label="<f1> array T"]
+
+    slice:f1 -> array:f1
+}
