@@ -14,31 +14,16 @@ avatar: /images/logo.png
 
 disqus:
   shortname: systemdump
-twitter:
-  username: systemdump
 
 nav_menu:
   - name: Posts
     url: /
     icon: /images/icons.svg#posts
-  - name: Projects
-    url: /projects
     icon: /images/icons.svg#portfolio
   - name: GitHub
     url: https://github.com/xlucas
     icon: /images/icons.svg#github
     outbound: true
-  - name: Twitter
-    url: https://twitter.com/systemdump
-    icon: /images/icons.svg#twitter
-    outbound: true
-
-projects:
-  - title: SVFS
-    teaser: A Virtual File System for Openstack Swift
-    url: https://github.com/ovh/svfs
-    role: Creator
-    category: object storage
 
 #################
 # Site Settings #
